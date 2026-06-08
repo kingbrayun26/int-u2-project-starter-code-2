@@ -24,6 +24,6 @@ h2 {
 
 /* The code below a solid black border to section and puts space between them (the margin). */
 .section {
-    border: 5px black solid;
+    border: 5px red solid;
     margin:5px;
 }
