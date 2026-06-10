@@ -5,9 +5,12 @@ h1 {
 text {
     color:blue;
 }
+body {
+  background-color:lightblue; /* Color name */
+}
 
 h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: Georgia, 'Times New Roman', Times, serif;
     color: blue;
 }
 /* Apply a global reset so padding doesn't break your box size */
@@ -49,8 +52,6 @@ h1 {
     border-color: #2ecc71;
     box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
   }
-}
-
 /* Apply a global reset so padding doesn't break your box size */
 * {
   box-sizing: border-box;
