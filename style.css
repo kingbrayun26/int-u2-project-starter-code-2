@@ -8,6 +8,100 @@ text {
 body {
   background-color:lightblue; /* Color name */
 }
+body {
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box; /* Keeps the border inside the viewport window */
+  border: 8px solid #333333;
+}
+div {
+  border: 6px solid red;
+}
+.parent-container {
+  display: flex;
+  flex-wrap: nowrap; /* Forces all items onto one line */
+}
+
+/* Reset basic spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fix the header bar to the very top */
+.site-header {
+  position: fixed; /* Pins it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Spans the full width of the screen */
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0; /* The bottom header line */
+  z-index: 1000; /* Keeps it above other content */
+  
+  /* Flexbox automatically aligns items side-by-side */
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, buttons right */
+  align-items: center; /* Vertically centers the text and buttons */
+  padding: 0 40px; /* Outer spacing on the sides */
+}
+
+/* Style the site name or logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Style the button list container */
+.nav-buttons {
+  display: flex;
+  gap: 15px; /* Adds space between each button */
+}
+
+/* Turn standard anchor tags into stylish buttons */
+.nav-btn {
+  text-decoration: none; /* Removes the default hyperlink underline */
+  color: #555555;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px; /* Rounds the button corners */
+  transition: all 0.3s ease; /* Smooth hover transition effect */
+}
+
+/* Interaction effect when hovering over menu items */
+.nav-btn:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+/* Style for a prominent call-to-action button */
+.btn-highlight {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-highlight:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+header {
+  /* Adds a solid background color */
+  background-color: lightblue;
+ 
+  /* Adds a solid header line to the very top */
+  border-top: 5px solid white;
+ 
+  /* Optional: Ensures text stands out against a dark background */
+  color: #ffffff;
+ 
+  /* Optional: Adds spacing inside the header around your content */
+  padding: 20px;
+}
+
 
 h1 {
    font-family: Georgia, 'Times New Roman', Times, serif;
@@ -60,7 +154,7 @@ h1 {
 }
 /* The code below centers all images on the page and gives them a width of 400px. */
 img {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width:300px;
