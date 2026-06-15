@@ -8,15 +8,67 @@ text {
 body {
   background-color:lightblue; /* Color name */
 }
+
+img {
+  max-width: 200%; /* Ensures it never overflows its container */
+  height: auto;    /* Maintains the correct aspect ratio */
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   box-sizing: border-box; /* Keeps the border inside the viewport window */
-  border: 8px solid #333333;
+  border: 12px solid #333333;
 }
-div {
-  border: 6px solid red;
+/* Apply box-sizing globally to keep dimensions predictable */
+* {
+  box-sizing: border-box; /* Includes padding and borders in total width/height */
 }
+
+/* The Main Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  
+  /* Outer Border around the entire navbar */
+  border: 12px solid #333333; 
+  border-radius: 8px; /* Smooths out the corners */
+}
+
+/* Style the navigation links */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 15px;
+  padding: 5px 10px;
+}
+
+/* Hover effect on links */
+.nav-links a:hover {
+  background-color: #e2e8f0;
+  border-radius: 4px;
+}
+
+/* The Text Box (Search Input) */
+.search-box {
+  padding: 6px 12px;
+  font-size: 14px;
+  
+  /* Border around the text box */
+  border: 12px solid #ccc; 
+  border-radius: 4px;
+  outline: none; /* Removes the browser's default heavy outline */
+  transition: border-color 0.2s; /* Smooth color shift on click */
+}
+
+/* Visual change when a user clicks into the text box */
+.search-box:focus {
+  border: 12px solid #007bff; /* Turns blue when active */
+}
+
 .parent-container {
   display: flex;
   flex-wrap: nowrap; /* Forces all items onto one line */
@@ -29,22 +81,16 @@ div {
   box-sizing: border-box;
 }
 
-/* Fix the header bar to the very top */
 .site-header {
-  position: fixed; /* Pins it to the viewport */
-  top: 0;
-  left: 0;
-  width: 100%; /* Spans the full width of the screen */
-  height: 70px;
-  background-color: #ffffff;
-  border-bottom: 2px solid #e0e0e0; /* The bottom header line */
-  z-index: 1000; /* Keeps it above other content */
-  
-  /* Flexbox automatically aligns items side-by-side */
   display: flex;
-  justify-content: space-between; /* Pushes logo left, buttons right */
-  align-items: center; /* Vertically centers the text and buttons */
-  padding: 0 40px; /* Outer spacing on the sides */
+  align-items: center;       /* Centers items vertically */
+  justify-content: space-between; /* Pushes logo to left, nav-links to right */
+  padding: 10px 20px;         /* Adds space around the contents */
+}
+
+.logo {
+  height: 50px;              /* Sets explicit height for the logo */
+  width: auto;               /* Keeps the aspect ratio intact */
 }
 
 /* Style the site name or logo */
@@ -120,14 +166,14 @@ h1 {
   padding: 0;
 }
 .animated-box {
-  width: 400px;
+  width: 300px;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: lightblue;
   border: 2px solid #3498db;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   cursor: pointer;
 }
 
@@ -153,12 +199,12 @@ h1 {
   padding: 0;
 }
 /* The code below centers all images on the page and gives them a width of 400px. */
+
 img {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width:300px;
+  width: 100px;  /* Shrinks the width to 200 pixels */
+  height: auto;  /* Maintains the correct aspect ratio */
 }
+
 /* The code below centers the text of all h2's on the page. */
 h2 {
     text-align:center;
