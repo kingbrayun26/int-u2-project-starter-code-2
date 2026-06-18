@@ -1,86 +1,187 @@
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: black;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #555;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden; /* Prevents scrolling while loading */
-}
-
-/* Preloader Container */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Black background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Ensures it is on top */
-    transition: opacity 0.5s ease; /* Smooth fade-out */
-}
-
-/* Logo Styling */
-.ps2-logo img {
-    width: 200px; /* Adjust size */
-    animation: fadeInLogo 2s ease-in;
-}
-
-/* Simple PS2-like background effect (Optional) */
-.ps2-background-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, #2b3a67 0%, #000 70%);
-    opacity: 0.5;
-}
-
-/* Fade Out Class (Added by JS) */
-#preloader.fade-out {
-    opacity: 0;
-    pointer-events: none; /* Allows clicking through it */
-}
-
-@keyframes fadeInLogo {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-
-.rectangle {
-    width: 200px;
-    height: 100px;
-    background-color: white;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-h1 {
-    color: white;
-    text-align: center;
-}
-p {
-    color: white;
-    font-size: 18px;
-}
-
-/* Reset and canvas setup */
+ /* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-box-sizing: border-box;
 }
-canvas {
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Splash Container */
+#ps2-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #020208 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease-in-out; /* Smooth fadeout */
+}
+
+/* Step 1: Sony Text Animation */
+.intro-text {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 0.4rem;
+  font-weight: bold;
+  opacity: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: fadeSony 3s ease-in-out forwards;
+}
+
+@keyframes fadeSony {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Step 2: PS2 Logo Explosive Zoom Animation */
+.ps2-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: logoZoom 4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  animation-delay: 3.2s; /* Starts right after Sony text fades out */
+}
+
+/* Stylizing individual lettering to match original style colors */
+.ps2-logo span {
+  font-size: 9rem;
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+}
+
+.ps2-logo .p { color: #ffffff; text-shadow: 0 0 20px #0055ff; }
+.ps2-logo .s { color: #ffffff; text-shadow: 0 0 20px #0055ff; margin-left: 1rem; }
+.ps2-logo .two { 
+  color: #111; 
+  text-shadow: 0 0 15px rgba(0, 85, 255, 0.8), inset 0 0 10px #001133; 
+}
+
+.sub-text {
+  color: #0055ff;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  text-shadow: 0 0 8px rgba(0, 85, 255, 0.8);
+}
+
+@keyframes logoZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: blur(10px);
+  }
+  20% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3); /* Explosive close-up scaleout */
+    filter: blur(8px);
+  }
+}
+
+/* --- Main Content Fix --- */
+#main-content {
+    display: block; /* Change from none to block */
+    opacity: 0;     /* Start invisible so it doesn't show under the splash */
+    transition: opacity 0.8s ease-in; /* Smoothly fade the site in */
+    min-height: 100vh;
+    background: #111;
+    color: #fff;
+    padding: 50px;
+}
+
+.content-visible {
+    opacity: 1 !important;
+}
+
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  
+  /* Outer Border around the entire navbar */
+  border: 12px solid #333333; 
+  border-radius: 8px; /* Smooths out the corners */
+}
+
+/* Style the navigation links */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 15px;
+  padding: 5px 10px;
+}
+
+/* Hover effect on links */
+.nav-links a:hover {
+  background-color: #e2e8f0;
+  border-radius: 4px;
+}
+
+
+box {
   display: block;
-  background-color: black;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-left: 5px solid #007BFF;
 }
