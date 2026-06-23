@@ -14,124 +14,105 @@ body {
   padding: 20px;
 }
 
- /* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-box-sizing: border-box;
+
+
+
+/* Keyframe Animations */
+@keyframes fadeIntro {
+    0% { opacity: 0; transform: scale(0.95); }
+    30% { opacity: 1; transform: scale(1); }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-body, html {
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  font-family: 'Arial', sans-serif;
-  overflow: hidden;
+@keyframes fadeCanvas {
+    0% { opacity: 0; }
+    40% { opacity: 0.7; }
+    100% { opacity: 0.4; }
 }
 
-/* Splash Container */
-#ps2-splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #020208 0%, #000000 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease-in-out; /* Smooth fadeout */
+@keyframes logoReveal {
+    0% { opacity: 0; transform: scale(0.8) blur(10px); }
+    50% { opacity: 1; transform: scale(1.05) blur(0px); }
+    100% { opacity: 0; transform: scale(1.2); pointer-events: none; }
 }
 
-/* Step 1: Sony Text Animation */
-.intro-text {
-  position: absolute;
-  color: #ffffff;
-  font-size: 1.2rem;
-  letter-spacing: 0.4rem;
-  font-weight: bold;
-  opacity: 0;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  animation: fadeSony 3s ease-in-out forwards;
-}
-
-@keyframes fadeSony {
-  0% { opacity: 0; }
-  30% { opacity: 1; }
-  70% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-/* Step 2: PS2 Logo Explosive Zoom Animation */
-.ps2-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transform: scale(0.3);
-  animation: logoZoom 4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
-  animation-delay: 3.2s; /* Starts right after Sony text fades out */
-}
-
-/* Stylizing individual lettering to match original style colors */
-.ps2-logo span {
-  font-size: 9rem;
-  font-weight: 900;
-  line-height: 1;
-  display: inline-block;
-}
-
-.ps2-logo .p { color: #ffffff; text-shadow: 0 0 20px #0055ff; }
-.ps2-logo .s { color: #ffffff; text-shadow: 0 0 20px #0055ff; margin-left: 1rem; }
-.ps2-logo .two { 
-  color: #111; 
-  text-shadow: 0 0 15px rgba(0, 85, 255, 0.8), inset 0 0 10px #001133; 
-}
-
-.sub-text {
-  color: #0055ff;
-  font-size: 1.5rem;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  margin-top: 1rem;
-  text-shadow: 0 0 8px rgba(0, 85, 255, 0.8);
-}
-
-@keyframes logoZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-    filter: blur(10px);
-  }
-  20% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3); /* Explosive close-up scaleout */
-    filter: blur(8px);
-  }
-}
-
-/* --- Main Content Fix --- */
 #main-content {
-    display: block; /* Change from none to block */
-    opacity: 0;     /* Start invisible so it doesn't show under the splash */
-    transition: opacity 0.8s ease-in; /* Smoothly fade the site in */
-    min-height: 100vh;
-    background: #111;
-    color: #fff;
-    padding: 50px;
+    padding: 40px;
+    color: white;
 }
 
-.content-visible {
-    opacity: 1 !important;
+
+
+/* Keyframe Sequences */
+@keyframes gridScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 400px; }
+}
+
+@keyframes gridFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; filter: blur(5px); }
+    30% { opacity: 1; filter: blur(0); }
+    70% { opacity: 1; filter: blur(0); }
+    100% { opacity: 0; filter: blur(8px); display: none; }
+}
+
+@keyframes zoomInLogo {
+    0% { opacity: 0; transform: scale(0.4) translateZ(-100px); filter: blur(15px); }
+    50% { opacity: 0.3; filter: blur(5px); }
+    100% { opacity: 1; transform: scale(1) translateZ(0); filter: blur(0); }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; letter-spacing: 30px; filter: blur(10px); }
+    100% { opacity: 1; letter-spacing: 12px; filter: blur(0); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+ body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #002b5e; /* Base blue color */
+}
+
+.ps2-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Deep blue gradient to mimic the PS2 startup colors */
+    background: radial-gradient(circle at center, #01438a 0%, #001e4a 70%, #000c24 100%);
+}
+
+#ps2-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.ps2-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none; /* Lets clicks pass through to content */
 }
 
 
