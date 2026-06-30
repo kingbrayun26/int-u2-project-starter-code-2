@@ -1,17 +1,17 @@
 /* The code below centers the text of all h1's on the page. */
 h1 {
-    text-align:center;
+    text-align: center;
 }
-text {
-    color:blue;
-}
+
 body {
-  background-color:lightblue; /* Color name */
+  background-color: lightblue; /* Color name */
 }
 
 img {
-  max-width: 200%; /* Ensures it never overflows its container */
+  max-width: 100%; /* Ensures it never overflows its container */
   height: auto;    /* Maintains the correct aspect ratio */
+  display: block;
+  margin: 0 auto;
 }
 
 body {
@@ -192,35 +192,24 @@ h1 {
     border-color: #2ecc71;
     box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
   }
-/* Apply a global reset so padding doesn't break your box size */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-/* The code below centers all images on the page and gives them a width of 400px. */
-
-img {
-  width: 100px;  /* Shrinks the width to 200 pixels */
-  height: auto;  /* Maintains the correct aspect ratio */
 }
 
 /* The code below centers the text of all h2's on the page. */
 h2 {
-    text-align:center;
+    text-align: center;
 }
 /* The code below aligns all the sections horizontally on the bottom. */
 .parent-container {
-    display:flex;
+    display: flex;
     margin: 5px;
     gap: 15px;
 }
 
-/* The code below a solid black border to section and puts space between them (the margin). */
+/* The code below adds a solid red border to section and puts space between them (the margin). */
 .section {
-    border: 5px red solid;
-    margin:12px;
-    display:flex;
+    border: 5px solid red;
+    margin: 12px;
+    display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
