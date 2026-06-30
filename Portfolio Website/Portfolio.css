@@ -1,3 +1,6 @@
+ 
+ 
+ 
  :root {
       --bg: blue;
       --surface: red;
@@ -29,18 +32,31 @@
       padding: 0 0 2rem;
     }
 
-  .box-container {
-  width: 100px;  /* Example fixed box size */
-  height: 100px;
-  border: 1px solid #000;
+
+.circle-img {
+  width: 200px;         /* Must match the height */
+  height: 200px;        /* Must match the width */
+  border-radius: 50%;   /* Turns the square into a circle */
+  object-fit: cover;    /* Prevents image distortion */
 }
 
 
+.left-text {
+  text-align: left; 
+}
+
+
+  .box-container {
+  width: 300px;  /* Example fixed box size */
+  height: 200px;
+}
+
   .box-image {
-  max-width: 100%;    /* Prevents the image from being wider than the box */
-  max-height: 100%;   /* Prevents the image from being taller than the box */
-  height: auto;       /* Maintains the image's original proportions */
-  width: auto;        /* Maintains the image's original proportions */
+   max-width: 100%;
+  display: block;
+  max-height: 100%;   
+  height: auto;       
+  width: auto;       
 }
 
 
