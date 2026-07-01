@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Theft Auto VI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #050505;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at top, rgba(255, 28, 107, 0.22), transparent 35%),
+                  linear-gradient(180deg, #131116 0%, #0b0b0d 42%, #040405 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      margin: 0;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ff4971;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 24px auto 0;
+      font-size: 1.1rem;
+      color: #d9d9d9;
+    }
+
+    .button-group {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button-group a {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff3566, #ff8c66);
+      color: white;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button-group a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(255, 77, 130, 0.25);
+    }
+
+    .content {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #ff8c66;
+    }
+
+    .card p {
+      margin: 14px 0 0;
+      color: #d7d7d7;
+    }
+
+    .feature-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      margin: 12px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .feature-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #ff4971;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+      color: #848484;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Grand Theft Auto VI</h1>
+    <p>Step into the neon-soaked streets of the next chapter in the Grand Theft Auto universe. Discover a world of high-stakes heists, unforgettable characters, and a sprawling open city alive with danger, ambition, and freedom.</p>
+    <div class="button-group">
+      <a href="#world">Explore the World</a>
+      <a href="#features">Key Features</a>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="grid">
+      <article class="card" id="world">
+        <h2>Vibrant Open World</h2>
+        <p>GTA VI brings a massive new open world inspired by iconic places. Cruise through sunlit highways, neon districts, and dangerous back alleys while the city hums with realistic traffic, day/night cycles, and dynamic events.</p>
+      </article>
+
+      <article class="card">
+        <h2>Compelling Story</h2>
+        <p>Follow a new pair of protagonists navigating crime, betrayal, and revenge. The story blends cinematic moments with player-driven choices and unforgettable encounters in a city built for chaos.</p>
+      </article>
+
+      <article class="card">
+        <h2>Advanced Gameplay</h2>
+        <p>Experience updated combat, more immersive driving, and enhanced AI. The game offers diverse missions, explosive set pieces, and multiple paths to complete each objective.</p>
+      </article>
+    </section>
+
+    <section class="card" id="features">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li>Fully realized city with multiple districts and hidden secrets.</li>
+        <li>Expanded heist planning, execution, and escape mechanics.</li>
+        <li>Deep character customization, gear, and upgrades.</li>
+        <li>Seamless transitions between solo story and multiplayer experiences.</li>
+        <li>Immersive audio design with radio stations, ambient sound, and cinematic score.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Created for fans of high-energy action and storytelling. Welcome to the next evolution of Grand Theft Auto.
+  </footer>
+</body>
+</html>
