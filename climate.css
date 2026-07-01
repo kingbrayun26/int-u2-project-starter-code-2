@@ -12,6 +12,25 @@
     * {
       box-sizing: border-box;
     }
+
+  .audio-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+    .audio-button:hover {
+      background-color: #0056b3;
+    }
+    .audio-button.playing {
+      background-color: #28a745;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -107,8 +126,10 @@
     }
     .split {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
+      grid-template-columns: 0.95fr 0.85fr;
+      width: 100%;
+      max-width: 900px;
+      gap: 1.5rem;
       align-items: flex-start;
     }
     .split img {
